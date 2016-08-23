@@ -3,7 +3,7 @@
    http://www.github.com/blockchaindev/smart-contract-patterns
 */
 
-import "../ownership/owner";
+import "../ownership/owner.sol";
 
 contract circuit_breaker is owned {
   function circuit_breaker() {

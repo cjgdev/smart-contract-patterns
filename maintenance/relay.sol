@@ -3,6 +3,8 @@
    http://www.github.com/blockchaindev/smart-contract-patterns
 */
 
+import 'ownership/owner.sol';
+
 contract relay is owned {
     address public current;
     function relay(address c) {

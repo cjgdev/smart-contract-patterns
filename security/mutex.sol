@@ -8,19 +8,19 @@ contract mutex {
   state   s;
   address locked_by;
   function mutex() {
-    s = available;
+    s = state.available;
   }
   function acquire() returns (bool) {
-    if (s == available) {
-      s = acquired;
+    if (s == state.available) {
+      s = state.acquired;
       locked_by = msg.sender;
       return true;
     }
     return false;
   }
   function release() returns (bool) {
-    if (s == acquired && msg.sender == locked_by) {
-      s = available;
+    if (s == state.acquired && msg.sender == locked_by) {
+      s = state.available;
       locked_by = 0;
       return true;
     }
